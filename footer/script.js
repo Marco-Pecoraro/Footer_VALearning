@@ -1,3 +1,4 @@
+
 class Footer extends HTMLElement {
     title = "Hello World";
     body = "Lorem ipsum dolor sit amet";
@@ -14,30 +15,31 @@ class Footer extends HTMLElement {
                 width: auto;
                 height: 100vh;
 
-                font-family: verdana;
                 margin: 0;
             }
 
             footer {
-                border-top: 1px solid black;
+                box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
 
-                width: 99%;
+                width: 99.9%;
 
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-evenly;
                 align-items: center;
 
                 position: absolute;
                 bottom: 0;
+                
+                padding-bottom:20px;
 
             }
 
             h3 {
-                font-size: 18pt;
+                font-size: 15pt;
             }
 
             p {
-                font-size: 13pt;
+                font-size: 10pt;
             }
 
             #btnForum_footer {
@@ -63,17 +65,21 @@ class Footer extends HTMLElement {
             #divSocial_footer {
                 border-left: 1px solid #000;
                 padding-left: 4%;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
             }
 
-            #imgLogo1_footer{
-                width:50px;
-                height:50px;
+            .imgLogo_footer{
+                width:20px;
+                height:20px;
+                margin: 0px 10px;
             }
-            #imgLogo2_footer{
-                width:32px;
-                height:32px;
+           
+            #pSocial{
+                display: flex;
+                align-items: center;
             }
-
 
         </style>
         `
@@ -93,7 +99,7 @@ class Footer extends HTMLElement {
                 </ul>
             </div>
             <div id="divSocial_footer"> <!-- parte social -->
-                <p><b>Seguici:</b><img id="imgLogo1_footer"src="img/logoFacebook.svg">Facebook <img id="imgLogo2_footer" src="img/logoInstagram.svg">Instagram</p>
+                <p id="pSocial"><b>Seguici:</b><img class="imgLogo_footer"src="img/facebook.png">Facebook <img class="imgLogo_footer" src="img/instagram.png">Instagram</p>
                 <p>made by <b>I.I.S. G.Vallauri Fossano</b></p>
             </div>
         </footer>        
