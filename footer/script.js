@@ -44,14 +44,14 @@ class Footer extends HTMLElement {
 
             #btnForum_footer {
                 width: fit-content;
-                padding: 11px 15px;
+                padding: 9px 15px;
 
-                font-size: 13pt;
+                font-size: 12pt;
 
                 background-color: #4C80CB;
 
                 border: 0px;
-                border-radius: 8px;
+                border-radius: 25px;
                 color: #eee;
 
                 transition: all 0.3s ease;
@@ -63,7 +63,7 @@ class Footer extends HTMLElement {
             }
 
             #divSocial_footer {
-                border-left: 1px solid #000;
+                border-left: 1px solid lightgray;
                 padding-left: 4%;
                 display:flex;
                 flex-direction: column;
@@ -94,8 +94,9 @@ class Footer extends HTMLElement {
             <div> <!-- parte esercizi -->
                 <h3>Esercizi in Evidenza</h3>
                 <ul>
-                    <li>Use of English</li>
-                    <li>Reading Comprehension</li>
+                    <li>Word Formation</li>
+                    <li>Sentence Trasformation</li>
+                    <li>Open Cloze</li>
                 </ul>
             </div>
             <div id="divSocial_footer"> <!-- parte social -->
