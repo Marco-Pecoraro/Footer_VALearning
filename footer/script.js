@@ -31,16 +31,11 @@ class Footer extends HTMLElement {
                 bottom: 0;
                 
                 padding-bottom:20px;
-
             }
 
-            h3 {
-                font-size: 15pt;
-            }
+            h3 { font-size: 15pt; }
 
-            p {
-                font-size: 10pt;
-            }
+            p { font-size: 10pt; }
 
             #btnForum_footer {
                 width: fit-content;
@@ -81,6 +76,7 @@ class Footer extends HTMLElement {
                 align-items: center;
             }
 
+            li::marker { color: #4C80CB; }
         </style>
         `
 
