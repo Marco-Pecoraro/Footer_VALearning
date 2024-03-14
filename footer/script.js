@@ -1,41 +1,31 @@
-
+//#region componente footer
 class Footer extends HTMLElement {
-    title = "Hello World";
-    body = "Lorem ipsum dolor sit amet";
-    bgColor = "red";
-
-    connectedCallback() {
-        this.render();
-    }
+    connectedCallback() { this.render(); }
 
     render() {
         this.innerHTML = `
         <style>
-            body {
-                width: auto;
-                height: 100vh;
-
-                margin: 0;
-            }
+            body { position:relative; }
 
             footer {
+                width: 100%;
+                
                 box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
-
-                width: 99.9%;
+                box-sizing: border-box;
 
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
 
                 position: absolute;
-                bottom: 0;
+                top: 100%;
                 
                 padding-bottom:20px;
             }
 
-            h3 { font-size: 15pt; }
+            footer h3 { font-size: 15pt; }
 
-            p { font-size: 10pt; }
+            footer p { font-size: 10pt; }
 
             #btnForum_footer {
                 width: fit-content;
@@ -71,14 +61,59 @@ class Footer extends HTMLElement {
                 margin: 0px 10px;
             }
            
-            #pSocial{
+            #pSocial_footer{
                 display: flex;
                 align-items: center;
             }
 
-            li::marker { color: #4C80CB; }
-        </style>
-        `
+            #pCredits_footer {
+                font-size:9pt;
+            }
+
+            footer li::marker { color: #4C80CB; }
+
+            footer a {
+                display: block;
+                position: relative;
+                padding: 1px 0;
+
+                color: #4C80CB;
+                text-decoration: none;
+            }
+            
+            footer a::after {
+                width: 100%;
+                height: 1px;
+            
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                
+                background-color: #4C80CB;
+                opacity: 0;
+                
+                transition: opacity 300ms, transform 300ms;
+            }
+            
+            footer a:hover::after,
+            footer a:focus::after {
+                opacity: 1;
+                transform: translate3d(0, 0.2em, 0);
+            }
+
+            footer a::after {
+                opacity 1;
+                transform: scale(0);
+                transform-origin: center;
+            }
+
+            footer a:hover::after,
+            footer a:focus::after {
+                transform: scale(1);
+            }            
+        </style>`
 
         this.innerHTML += `
         <footer>
@@ -96,38 +131,13 @@ class Footer extends HTMLElement {
                 </ul>
             </div>
             <div id="divSocial_footer"> <!-- parte social -->
-                <p id="pSocial"><b>Seguici:</b><img class="imgLogo_footer"src="img/facebook.png">Facebook <img class="imgLogo_footer" src="img/instagram.png">Instagram</p>
+                <p id="pSocial_footer"><b>Seguici:</b><img class="imgLogo_footer"src="img/facebook.png"><a href="https://www.facebook.com/IISVALLAURI/">Facebook</a> <img class="imgLogo_footer" src="img/instagram.png"><a href="https://www.instagram.com/iisvallauri/">Instagram</a></p>
                 <p>made by <b>I.I.S. G.Vallauri Fossano</b></p>
+                <p id="pCredits_footer">Con il contributo di: <a>sito favoloso</a></p>
             </div>
-        </footer>        
-        `
-    }
-
-    set Title(value) {
-        this.title = value;
-        this.render();
-    }
-    set Body(value) {
-        this.body = value;
-        this.render();
-    }
-
-    set BackgroundColor(value) {
-        this.bgColor = value;
-        this.render();
+        </footer> `
     }
 }
 
 customElements.define("val-footer", Footer);
-
-
-
-window.onload = () => {
-    // let myComponent = document.createElement("val-componente")
-    // myComponent.Title = "Pippo";
-    // myComponent.Body = "ciao mi chiamo Pippo";
-    // myComponent.BackgroundColor = "blue";
-    // let body = document.getElementsByName('body')[0];
-    // document.body.appendChild(myComponent)
-
-}
+//#endregion componente footer
