@@ -67,7 +67,19 @@ class Footer extends HTMLElement {
             }
 
             #pCredits_footer {
-                font-size:9pt;
+                font-size:9pt;  
+            }
+
+            #pCredits_footer a {
+                display:inline;
+                opacity:1;
+            }
+
+
+            #pMadeBy_footer{
+                display: flex;
+                align-items:center;
+                justify-content:space-between;
             }
 
             footer li::marker { color: #4C80CB; }
@@ -132,10 +144,38 @@ class Footer extends HTMLElement {
             </div>
             <div id="divSocial_footer"> <!-- parte social -->
                 <p id="pSocial_footer"><b>Seguici:</b><img class="imgLogo_footer"src="img/facebook.png"><a href="https://www.facebook.com/IISVALLAURI/">Facebook</a> <img class="imgLogo_footer" src="img/instagram.png"><a href="https://www.instagram.com/iisvallauri/">Instagram</a></p>
-                <p>made by <b>I.I.S. G.Vallauri Fossano</b></p>
-                <p id="pCredits_footer">Con il contributo di: <a>sito favoloso</a></p>
+                <p id="pMadeBy_footer"><img src="img/Valearning_logoMeta.png" width="16px" height="20px" style="margin: 0 5px"> made by <b style="margin:0 5px">I.I.S. G.Vallauri Fossano</b></p>
+                <p id="pCredits_footer">Con il contributo di:
+                <a>sito favoloso</a>
+                <a>sito STRATOPICO</a>
+                <a>sito MAGNIFICO</a>
+                </p>
             </div>
         </footer> `
+
+       
+        let links = document.querySelectorAll("#pCredits_footer a")
+        let i=1;
+        resettaLink();
+
+        setInterval(function () {
+            if(i>=links.length){
+                resettaLink();
+                i=0;
+            }
+            else{
+                links.forEach(link => link.style.display = "none");
+                links[i].style.display = "inline";
+
+            }
+            i++;
+            console.log(i)
+        },3000)
+       
+        function resettaLink(){
+            links.forEach(link => link.style.display = "none");
+            links[0].style.display = "inline";
+        }
     }
 }
 
