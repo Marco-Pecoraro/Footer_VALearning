@@ -16,6 +16,7 @@ class Footer extends HTMLElement {
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
+                flex-wrap:wrap;
 
                 position: absolute;
                 top: 100%;
@@ -155,16 +156,23 @@ class Footer extends HTMLElement {
             footer a:focus::after {
                 transform: scale(1);
             }            
+
+            @media screen and (max-width: 768px){
+                footer{
+                    display:flex;
+                   
+                }
+            }
         </style>`
 
         this.innerHTML += `
         <footer>
-            <div> <!-- parte forum -->
+            <div id="divForum_footer"> <!-- parte forum -->
                 <h3>Hai qualche Domanda?</h3>
                 <p>Grazie al vostro impegno siamo riusciti a formare<br> una vera e propria <b>community</b>.</p>
                 <button id="btnForum_footer">Visita il Forum</button>
             </div>
-            <div> <!-- parte esercizi -->
+            <div id="divEsEvidenza_footer"> <!-- parte esercizi -->
                 <h3>Esercizi in Evidenza</h3>
                 <ul>
                     <li>Word Formation</li>
