@@ -72,7 +72,37 @@ class Footer extends HTMLElement {
 
             #pCredits_footer a {
                 display:inline;
-                opacity:1;
+                cursor:pointer;
+            }
+
+            .mostra{
+                animation: anim 7s ease forwards;
+            }
+
+            @keyframes anim {
+                0%{
+                    opacity:0;
+                    top: -50px;
+                }
+
+                20%{
+                    opacity:0.1;
+                }
+                35%{
+                    opacity:0.5;
+                }
+                50%{
+                    opacity:1;
+                    top:0px;
+                }
+                90%{
+                    opacity:1;
+                    top:0px;
+                }
+                100%{
+                    opacity:0;
+                    top:20px;
+                }
             }
 
 
@@ -166,15 +196,16 @@ class Footer extends HTMLElement {
             else{
                 links.forEach(link => link.style.display = "none");
                 links[i].style.display = "inline";
-
+                links[i].classList.add("mostra")
             }
             i++;
-            console.log(i)
-        },3000)
+        },7000)
        
         function resettaLink(){
             links.forEach(link => link.style.display = "none");
+            links.forEach(link => link.classList.remove("mostra"));
             links[0].style.display = "inline";
+            links[0].classList.add("mostra")
         }
     }
 }
