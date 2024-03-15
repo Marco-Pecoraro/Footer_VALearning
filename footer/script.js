@@ -184,7 +184,7 @@ class Footer extends HTMLElement {
                 <p id="pSocial_footer"><b>Seguici:</b><img class="imgLogo_footer"src="img/facebook.png"><a href="https://www.facebook.com/IISVALLAURI/">Facebook</a> <img class="imgLogo_footer" src="img/instagram.png"><a href="https://www.instagram.com/iisvallauri/">Instagram</a></p>
                 <p id="pMadeBy_footer"><img src="img/Valearning_logoMeta.png" width="16px" height="20px" style="margin: 0 5px"> made by <b style="margin:0 5px">I.I.S. G.Vallauri Fossano</b></p>
                 <p id="pCredits_footer">Con il contributo di:
-                <a>sito favoloso</a>
+                <a href="https://storyset.com/">storyset</a>
                 <a>sito STRATOPICO</a>
                 <a>sito MAGNIFICO</a>
                 </p>
