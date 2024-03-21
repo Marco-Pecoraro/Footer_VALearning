@@ -1,17 +1,17 @@
 //#region componente footer
-class Footer extends HTMLElement {
-    connectedCallback() { this.render(); }
+class Footer extends HTMLElement { // classe per il componente custom
+    connectedCallback() { this.render(); } // funzione che richiama la costruzione del componente
 
     render() {
-        const creditsLinks = [
+        const creditsLinks = [ // crediti dati per l'utilizzo di fonti esterne richiedenti il credito
             { url: "https://storyset.com/", text: "storyset" },
-            { url: "#", text: "sito STRATOPICO" },
-            { url: "#", text: "sito MAGNIFICO" }
+            { url: "#", text: "wikipedia" },
+            { url: "#", text: "bootstrap" }
         ];
 
-        const linksHTML = creditsLinks.map(link => `<a href="${link.url}">${link.text}</a>`).join(" ");
-
+        const linksHTML = creditsLinks.map(link => `<a href="${link.url}">${link.text}</a>`).join(" "); // crea i link dei credits
         
+        // variabile usata per salvare l'html e il css visualizzato
         this.innerHTML = `
         <style>
             body { position:relative; }
@@ -76,45 +76,36 @@ class Footer extends HTMLElement {
                 align-items: center;
             }
 
-            #pCredits_footer {
-                font-size:9pt;  
-            }
+            #pCredits_footer { font-size:9pt; }
 
             #pCredits_footer a {
                 display:inline;
                 cursor:pointer;
             }
 
-            .mostra{
-                animation: anim 7s ease forwards;
-            }
+            .mostra { animation: anim 7s ease forwards; } // classe applicata a chi deve subire l'animazione
 
             @keyframes anim {
-                0%{
+                0% {
                     opacity:0;
                     top: -50px;
                 }
 
-                20%{
-                    opacity:0.1;
-                }
-                35%{
-                    opacity:0.5;
-                }
-                50%{
+                20% { opacity:0.1; }
+                35% { opacity:0.5; }
+                50% {
                     opacity:1;
                     top:0px;
                 }
-                90%{
+                90% {
                     opacity:1;
                     top:0px;
                 }
-                100%{
+                100% {
                     opacity:0;
                     top:20px;
                 }
             }
-
 
             #pMadeBy_footer{
                 display: flex;
@@ -166,11 +157,9 @@ class Footer extends HTMLElement {
                 transform: scale(1);
             }            
 
-            @media screen and (max-width: 768px){
-                footer{
-                    display:flex;
-                   
-                }
+            @media screen and (max-width: 878px){
+                footer { display:flex; }
+                #divSocial_footer { border-left: 0px; }
             }
         </style>`
 
@@ -198,13 +187,13 @@ class Footer extends HTMLElement {
         </footer> `
 
        
-        let links = document.querySelectorAll("#pCredits_footer a")
-        let i=1;
-        resettaLink();
+        let links = document.querySelectorAll("#pCredits_footer a") // seleziona i links
+        let i=1; // contatore per l'animazione dei credits
+        resettaLink(); // rende invisibili tutti i links
 
-        setInterval(function () {
+        setInterval(function () { // ogni 7 secondi, nei credits, viene effettuata l'animazione per ogni link 
             if(i>=links.length){
-                resettaLink();
+                resettaLink(); // rende invisibili tutti i links
                 i=0;
             }
             else{
@@ -215,7 +204,7 @@ class Footer extends HTMLElement {
             i++;
         },7000)
        
-        function resettaLink(){
+        function resettaLink(){ // rende invisibili tutti i links
             links.forEach(link => link.style.display = "none");
             links.forEach(link => link.classList.remove("mostra"));
             links[0].style.display = "inline";
@@ -224,5 +213,5 @@ class Footer extends HTMLElement {
     }
 }
 
-customElements.define("val-footer", Footer);
+customElements.define("val-footer", Footer); // aggiunge il web component
 //#endregion componente footer
